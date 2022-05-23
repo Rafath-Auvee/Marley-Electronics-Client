@@ -1,12 +1,5 @@
-npm install react-hook-form
---------------------------------------------------
-npm i react-query
---------------------------------------------------
-npm install --save react-toastify
 import 'react-toastify/dist/ReactToastify.css';
---------------------------------------------------
-npm install react-router-dom@6
---------------------------------------------------
+
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
@@ -17,7 +10,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 
 @tailwind base;
@@ -26,4 +19,13 @@ module.exports = {
 
 --------------------------------------------------
 
-npm i daisyui
+
+module.exports = {
+  daisyui: {
+    themes: ["cupcake", "dark", "cmyk"],
+  },
+}
+--------------------------------------------------
+
+npm i --save react-day-picker date-fns axios daisyui react-router-dom@6 react-toastify react-hook-form react-query firebase react-firebase-hooks
+--------------------------------------------------
