@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
+  apiKey: "AIzaSyDF6cSdqo0wL74lnR86jKLzAxt4f-3FpLg",
+  authDomain: "marley-electronics.firebaseapp.com",
+  projectId: "marley-electronics",
+  storageBucket: "marley-electronics.appspot.com",
+  messagingSenderId: "672588804056",
+  appId: "1:672588804056:web:287cd5538862d49739ccad"
 };
 
 const app = initializeApp(firebaseConfig);
