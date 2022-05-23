@@ -1,0 +1,29 @@
+npm install react-hook-form
+--------------------------------------------------
+npm i react-query
+--------------------------------------------------
+npm install --save react-toastify
+import 'react-toastify/dist/ReactToastify.css';
+--------------------------------------------------
+npm install react-router-dom@6
+--------------------------------------------------
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+--------------------------------------------------
+
+npm i daisyui
