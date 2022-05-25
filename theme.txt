@@ -1,0 +1,24 @@
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#8defdd",
+          secondary: "#2e658c",
+          accent: "#e81049",
+          neutral: "#262532",
+          "base-100": "#FFFFFF",
+          info: "#376AD7",
+          success: "#5ADD97",
+          warning: "#E19914",
+          error: "#ED2139",
+        },
+      },
+    ],
+  },
+};

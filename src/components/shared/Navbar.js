@@ -35,10 +35,8 @@ const Navbar = () => {
             Sign Out
           </button>
         ) : (
-
-            <Link to="/login">Login</Link>
-            // <Link to="/signup">Sign Up</Link>
-         
+          <Link to="/login">Login</Link>
+          // <Link to="/signup">Sign Up</Link>
         )}
       </li>
     </>
@@ -76,10 +74,11 @@ const Navbar = () => {
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        <label
+        {/* <label
           tabIndex="1"
           htmlFor="dashboard-sidebar"
           className="btn btn-ghost lg:hidden"
+          // className="btn btn-ghost lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +95,37 @@ const Navbar = () => {
             />
           </svg>
         </label>
+         */}
+        {user && (
+          <div>
+            <div class="flex-none gap-2">
+              <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                  <div class="w-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+                <ul
+                  tabindex="0"
+                  class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 text-base-content"
+                >
+                  <li>
+                    <Link to="/login" class="justify-between">
+                      Profile
+                      <span class="badge">New</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/login">Settings</Link>
+                  </li>
+                  <li>
+                    <Link to="/login">Logout</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
