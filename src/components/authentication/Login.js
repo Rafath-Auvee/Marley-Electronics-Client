@@ -3,7 +3,7 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import HeadShake from "react-reveal/HeadShake";
+import Bounce from "react-reveal/Bounce";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
@@ -49,12 +49,12 @@ const Login = () => {
   }
 
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
   };
 
   return (
-    <HeadShake>
+    <Bounce bottom>
       {/* bg-gradient-to-r from-base-content to-neutral-content */}
       <div className="bg-no-repeat  opacity-75 inset-0 z-0 bg-cover bg-center relative">
         <div className="absolute  opacity-75 inset-0 z-0"></div>
@@ -112,8 +112,8 @@ const Login = () => {
                       )}
                     </label>
                   </div>
-                  <div className="space-y-2">
-                    <label className="mb-5 text-sm font-medium text-gray-700 tracking-wide">
+                  <div className="space-y-1">
+                    <label className=" text-sm font-medium text-gray-700 tracking-wide">
                       Password
                     </label>
                     <input
@@ -162,7 +162,7 @@ const Login = () => {
                     <div className="text-sm">
                       <Link
                         to="/"
-                        className="text-grey-400 hover:text-grey-500"
+                        className="mt-2 text-grey-400 hover:text-grey-500"
                       >
                         Forgot your password?
                       </Link>
@@ -177,26 +177,33 @@ const Login = () => {
                     </button>
                   </div>
                 </div>
-                <div className="pt-5 text-center text-base-content text-sm">
+                <div className="mt-2 text-center text-base-content text-sm">
                   <span>
                     Create New Account?
                     <Link
                       to="/signup"
                       className="ml-2 text-green hover:text-green-500 "
                     >
-                      Sign In
+                      Sign Up
                     </Link>
-                    {signInError} 
+                    {signInError}
                   </span>
                 </div>
               </form>
+              <div className="mt-2 divider divide-black"></div>
+              <div className="flex items-center justify-center">
+              <button
+                onClick={() => signInWithGoogle()}
+                className="btn btn-outline"
+              >
+                Continue with Google
+              </button>
+              </div>
             </div>
-            <div className="divider">OR</div>
-            
           </div>
         </div>
       </div>
-    </HeadShake>
+    </Bounce>
   );
 };
 

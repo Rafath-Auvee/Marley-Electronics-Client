@@ -2,13 +2,9 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <div>
-      <div
-        class="spinner-grow inline-block w-12 h-12 bg-current rounded-full opacity-0"
-        role="status"
-      >
-        <span class="visually-hidden">Loading...</span>
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen	">
+      <p>Please Wait</p>
+      <progress class="progress  progress-primary w-60"></progress>
     </div>
   );
 };
