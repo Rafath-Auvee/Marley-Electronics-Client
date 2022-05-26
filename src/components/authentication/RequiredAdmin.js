@@ -6,7 +6,7 @@ import Loading from '../shared/Loading.js';
 import useAdmin from '../hooks/useAdmin';
 import { signOut } from 'firebase/auth';
 
-const RequireAdmin = ({children}) => {
+const RequiredAdmin = ({children}) => {
     const [user, loading] = useAuthState(auth);
     const [admin, adminLoading] = useAdmin(user);
     const location = useLocation();
@@ -22,4 +22,4 @@ const RequireAdmin = ({children}) => {
     return children;
 };
 
-export default RequireAdmin;
+export default RequiredAdmin;

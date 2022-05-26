@@ -12,10 +12,11 @@ import Footer from "./components/shared/Footer.js"
 import Home from "./components/pages/Home.js";
 import Blog from "./components/pages/Blog.js";
 import Portfolio from "./components/pages/Portfolio.js"
-
+import ResourceDetail from "./components/pages/Product/ResourceDetail.js"
 // ---------------Auth
 import Login from "./components/authentication/Login.js"
 import SignUp from "./components/authentication/SignUp.js"
+import Resources from "./components/pages/Resources.js"
 
 // ---------------Require
 import RequiredAuth from "./components/authentication/RequiredAuth.js"
@@ -31,6 +32,12 @@ function App() {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="resources" element={<RequiredAuth><Resources /></RequiredAuth>} />
+        <Route path="resources/:id" element={<RequiredAuth><ResourceDetail/></RequiredAuth>} />
+
+        
+
+
       </Routes>
       <Footer/>
       <ToastContainer/>

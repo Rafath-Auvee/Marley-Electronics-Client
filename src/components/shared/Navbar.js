@@ -12,6 +12,29 @@ const Navbar = () => {
     localStorage.removeItem("accessToken");
   };
 
+  const userMenu = (
+    <>
+      <li>
+        <Link to="/dashboard">My Appointments</Link>
+      </li>
+      <li>
+        <Link to="/dashboard/review">My Reviews</Link>
+      </li>
+      <li>
+        <Link to="/dashboard/history">My History</Link>
+      </li>
+
+      <li>
+        <Link to="/dashboard/users">All Users</Link>
+      </li>
+      <li>
+        <Link to="/dashboard/addDoctor">Add a Doctor</Link>
+      </li>
+      <li>
+        <Link to="/dashboard/manageDoctor">Manage Doctors</Link>
+      </li>
+    </>
+  );
   const menuItems = (
     <>
       <li>
@@ -22,7 +45,10 @@ const Navbar = () => {
         <Link to="/blog">Blog</Link>
       </li>
       <li>
-        <Link to="/Portfolio">Portfolio</Link>
+        <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link to="/resources">Resources</Link>
       </li>
       {user && (
         <li>
@@ -98,29 +124,18 @@ const Navbar = () => {
          */}
         {user && (
           <div>
-            <div class="flex-none gap-2">
-              <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                  <div class="w-10 rounded-full">
+            <div className="flex-none gap-2">
+              <div className="dropdown dropdown-end">
+                <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
                     <img src={user?.photoURL} />
                   </div>
                 </label>
                 <ul
-                  tabindex="0"
-                  class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 text-base-content"
+                  tabIndex="0"
+                  className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 text-base-content"
                 >
-                  <li>
-                    <Link to="/login" class="justify-between">
-                      Profile
-                      <span class="badge">New</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/login">Settings</Link>
-                  </li>
-                  <li>
-                    <Link to="/login">Logout</Link>
-                  </li>
+                  {userMenu}
                 </ul>
               </div>
             </div>

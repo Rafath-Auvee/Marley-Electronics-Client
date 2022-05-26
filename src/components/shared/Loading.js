@@ -4,7 +4,7 @@ const Loading = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen	">
       <p>Please Wait</p>
-      <progress class="progress  progress-primary w-60"></progress>
+      <progress className="progress  progress-primary w-60"></progress>
     </div>
   );
 };
