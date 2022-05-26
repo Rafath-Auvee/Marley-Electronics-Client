@@ -13,13 +13,11 @@ import useToken from "../hooks/useToken.js";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
@@ -31,11 +29,10 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (user || gUser) {
-      console.log(gUser)
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [from, navigate]);
+  }, [token, from, navigate]);
 
   if (loading || gLoading) {
     return <Loading></Loading>;
@@ -50,7 +47,6 @@ const Login = () => {
   }
 
   const onSubmit = (data) => {
-    console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
   };
 

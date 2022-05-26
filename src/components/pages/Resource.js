@@ -7,7 +7,7 @@ import ProductCard from "./ProductCard.js"
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 
-const Resources = () => {
+const Resource = () => {
   const { data, error } = useSWR(
     "http://localhost:5000/resources",
     fetcher
@@ -30,4 +30,4 @@ const Resources = () => {
   );
 };
 
-export default Resources;
+export default Resource;
