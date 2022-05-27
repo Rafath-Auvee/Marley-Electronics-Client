@@ -10,7 +10,7 @@ const Slider = () => {
             data-carousel-item="active"
           >
             <img
-              src="/docs/images/carousel/carousel-1.svg"
+              src="https://i.ibb.co/HBJPZBY/photo-1563968743333-044cef800494-crop-entropy-cs-tinysrgb-fm-jpg-ixlib-rb-1-2.jpg"
               className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
               alt="..."
             />
@@ -18,7 +18,7 @@ const Slider = () => {
 
           <div className="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-              src="/docs/images/carousel/carousel-2.svg"
+              src="https://i.ibb.co/HBJPZBY/photo-1563968743333-044cef800494-crop-entropy-cs-tinysrgb-fm-jpg-ixlib-rb-1-2.jpg"
               className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
               alt="..."
             />
@@ -26,7 +26,7 @@ const Slider = () => {
 
           <div className="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-              src="/docs/images/carousel/carousel-3.svg"
+              src="https://i.ibb.co/HBJPZBY/photo-1563968743333-044cef800494-crop-entropy-cs-tinysrgb-fm-jpg-ixlib-rb-1-2.jpg"
               className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
               alt="..."
             />
@@ -34,7 +34,7 @@ const Slider = () => {
 
           <div className="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-              src="/docs/images/carousel/carousel-4.svg"
+              src="https://i.ibb.co/ByQbvZG/photo-1518770660439-4636190af475-ixlib-rb-1-2.jpg"
               className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
               alt="..."
             />
@@ -42,7 +42,7 @@ const Slider = () => {
 
           <div className="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-              src="/docs/images/carousel/carousel-5.svg"
+              src="https://i.ibb.co/HBJPZBY/photo-1563968743333-044cef800494-crop-entropy-cs-tinysrgb-fm-jpg-ixlib-rb-1-2.jpg"
               className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
               alt="..."
             />
