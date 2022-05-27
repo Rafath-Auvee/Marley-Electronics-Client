@@ -9,7 +9,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Resource = () => {
   const { data, error } = useSWR(
-    "http://localhost:5000/resources",
+    "http://localhost:5000/product",
     fetcher
   );
 

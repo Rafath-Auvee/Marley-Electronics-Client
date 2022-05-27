@@ -7,10 +7,10 @@ const ProductCard = ({ product }) => {
   const { id } = useParams();
 
   const goProduct = async (id) => {
-    const baseURL = `/resources/${id}`;
+    const baseURL = `/product/${id}`;
     console.log(baseURL);
     console.log(product);
-    await navigate(`/resources/${id}`, { state: product });
+    await navigate(`/product/${id}`, { state: product });
     console.log("Product clicked");
   };
 

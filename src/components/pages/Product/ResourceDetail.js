@@ -17,19 +17,19 @@ const ResourceDetail = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const { id } = useParams();
-  const { register, handleSubmit,reset } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [purchaseQuantity, setPurchaseQuantity] = useState("");
-  const baseUrl = `http://localhost:5000/resources/${id}`;
+  const baseUrl = `http://localhost:5000/product/${id}`;
   const [total, setTotal] = useState(0);
   const {
     data: data,
     isLoading,
     refetch,
   } = useQuery(["order", id], () =>
-    fetch(`http://localhost:5000/resources/${id}`, {
+    fetch(`http://localhost:5000/product/${id}`, {
       method: "GET",
       headers: {
-        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     }).then((res) => res.json())
   );
@@ -40,7 +40,7 @@ const ResourceDetail = () => {
   let minquantity = 50;
   const handleButton = (event) => {
     setPurchaseQuantity(event.target.value);
-    console.log(purchaseQuantity)
+    console.log(purchaseQuantity);
     if (
       parseInt(purchaseQuantity) >= minquantity &&
       parseInt(purchaseQuantity) <= data.quantity
@@ -60,20 +60,21 @@ const ResourceDetail = () => {
   const onSubmit = (e) => {
     // console.log(e.target.value)
     totalQantity = data.quantity - purchaseQuantity;
-    const totalPrice = parseFloat(purchaseQuantity) * parseFloat(data.price)
-    const parseTotalQ = parseInt(totalQantity)
+    const totalPrice = parseFloat(purchaseQuantity) * parseFloat(data.price);
+    const parseTotalQ = parseInt(totalQantity);
     const booking = {
       myInputQuantity: purchaseQuantity,
       product: data.name,
-      quantity: totalQantity,
-      email: user?.email,
+      status: "",
+      quantity: parseTotalQ,
+      email: user.email,
       address: e.address,
       phone: e.phone,
-      total: totalPrice
+      total: totalPrice,
     };
-    
-    console.log(totalQantity)
-    fetch(`http://localhost:5000/resources/${id}`, {
+
+    console.log(totalQantity);
+    fetch(`http://localhost:5000/product/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -81,11 +82,10 @@ const ResourceDetail = () => {
       },
       body: JSON.stringify({ parseTotalQ }),
     })
-      .then((res) =>res.json())
+      .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         if (data.modifiedCount) {
-
           refetch();
           fetch(`http://localhost:5000/booking`, {
             method: "POST",
@@ -98,14 +98,13 @@ const ResourceDetail = () => {
             .then((res) => res.json())
             .then((data) => {
               if (data.acknowledged) {
-                console.log(data);
                 toast.success("Order Placed Successsfully");
+                reset();
               }
             });
         } else {
           toast.error("Cannot Place order.Please try again.");
         }
-        reset()
       });
   };
 
@@ -156,8 +155,8 @@ const ResourceDetail = () => {
                 <input
                   type="number"
                   disabled
-                  value={(data.price)}
-                  placeholder={(data.price)}
+                  value={data.price}
+                  placeholder={data.price}
                   className="input input-bordered  w-full max-w-xs"
                 />
                 <span>USD</span>
@@ -172,7 +171,7 @@ const ResourceDetail = () => {
                 <input
                   type="number"
                   disabled
-                  value={(data.quantity)}
+                  value={data.quantity}
                   // placeholder={(data.quantity)}
                   className="input input-bordered  w-full max-w-xs"
                 />

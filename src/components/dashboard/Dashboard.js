@@ -4,9 +4,13 @@ import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
 import useAdmin from "../hooks/useAdmin";
 
+
+
 const Dashboard = () => {
+
     const [user] = useAuthState(auth)
     const [isAdmin] = useAdmin(user);
+    console.log(isAdmin)
     return (
         <div className="bg-no-repeat bg-cover bg-center">
             <div className="drawer drawer-mobile">
@@ -24,7 +28,7 @@ const Dashboard = () => {
                             <li className='hover-bordered'><Link to='/dashboard/review'>My Reviews</Link></li>
                         </>
                         }
-                        {isAdmin&& <>
+                        {isAdmin && <>
                             <li className='hover-bordered'><Link to='/dashboard/users'>All Users</Link></li>
                             <li className='hover-bordered'><Link to='/dashboard/addProduct'>Add a New Product</Link></li>
                             <li className='hover-bordered'><Link to='/dashboard/manageProduct'>Manage Products</Link></li>

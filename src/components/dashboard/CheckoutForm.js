@@ -9,7 +9,7 @@ const CheckoutForm = ({ order }) => {
     const [transactionID, setTransactionID] = useState('')
     const [clientSecret, setClientSecret] = useState("");
     const [processing, setProcessing] = useState(false);
-    const { _id, name, email, price } = order
+    const { _id, name, email, total } = order
     useEffect(() => {
         fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
@@ -17,16 +17,15 @@ const CheckoutForm = ({ order }) => {
                 "content-type": "application/json",
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
-            body: JSON.stringify({ price }),
+            body: JSON.stringify({ total }),
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 if (data?.clientSecret) {
                     setClientSecret(data.clientSecret);
                 }
             })
-    }, [price]);
+    }, [total]);
     const handleSubmit = async (event) => {
         event.preventDefault()
         setProcessing(true)
@@ -66,7 +65,6 @@ const CheckoutForm = ({ order }) => {
             console.log(paymentIntent);
             setTransactionID(paymentIntent.id)
             setSuccess('Your payment is completed')
-            //payment info
             const payment = {
                 order: _id,
                 transactionId: paymentIntent.id
@@ -79,7 +77,6 @@ const CheckoutForm = ({ order }) => {
                 },
                 body: JSON.stringify(payment),
             }).then(res => res.json().then(data => {
-                console.log(data);
                 setProcessing(false)
             }))
         }
@@ -94,9 +91,9 @@ const CheckoutForm = ({ order }) => {
                         style: {
                             base: {
                                 fontSize: '16px',
-                                color: '#424770',
+                                color: '#FFEE00',
                                 '::placeholder': {
-                                    color: '#aab7c4',
+                                    color: '#FFEE00',
                                 },
                             },
                             invalid: {

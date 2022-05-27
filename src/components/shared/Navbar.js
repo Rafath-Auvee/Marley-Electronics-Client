@@ -18,7 +18,7 @@ const Navbar = () => {
       <li className="hover-bordered">
         <Link to="/dashboard">My Profile</Link>
       </li>
-      {!isAdmin && (
+      {!isAdmin && user && (
         <>
           <li className="hover-bordered">
             <Link to="/dashboard/myorders">My Orders</Link>
@@ -29,7 +29,7 @@ const Navbar = () => {
           
         </>
       )}
-      {isAdmin && (
+      {isAdmin && !user &&  (
         <>
           <li className="hover-bordered">
             <Link to="/dashboard/users">All Users</Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
         <Link to="/portfolio">Portfolio</Link>
       </li>
       <li>
-        <Link to="/resources">Resources</Link>
+        <Link to="/product">Resources</Link>
       </li>
       {user && (
         <li>
