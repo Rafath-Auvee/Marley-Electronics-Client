@@ -1,10 +1,9 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import first from "../assets/9.png"
-import second from "../assets/10.png"
-import third from "../assets/11.png"
-
+import first from "../assets/9.png";
+import second from "../assets/10.png";
+import third from "../assets/11.png";
 
 const Portfolio = () => {
   return (
@@ -13,7 +12,11 @@ const Portfolio = () => {
         <h1 className="text-3xl text-center">Portfolio</h1>
         <div class="hero min-h-screen">
           <div class="hero-content flex-col lg:flex-row">
-            <img className="w-96 rounded-3xl" src="https://i.ibb.co/CM23fzs/image.png" alt="" />
+            <img
+              className="w-96 rounded-3xl"
+              src="https://i.ibb.co/CM23fzs/image.png"
+              alt=""
+            />
             <div>
               <h1 class="text-5xl font-bold">Hello!</h1>
               <p class="py-6">
@@ -39,56 +42,67 @@ const Portfolio = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 mb-6 ml-6">
           <div class="card w-96 bg-base-100 shadow-xl">
             <figure class="px-10 pt-10">
-              <img
-                src={first}
-                alt="Shoes"
-                class="rounded-xl"
-              />
+              <img src={first} alt="Shoes" class="rounded-xl" />
             </figure>
             <div class="card-body items-center text-center">
               <h2 class="card-title">Paradis Island Electronic Shop</h2>
               <p>React, React Router, Bootstrap</p>
               <div class="card-actions">
                 {/* <button class="btn btn-primary"> </button> */}
-                <a href="https://auvee-assignment-9.netlify.app" className="btn btn-neutral" target="_blank" rel="noopener noreferrer">Visit</a>
+                <a
+                  href="https://auvee-assignment-9.netlify.app"
+                  className="btn btn-neutral"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit
+                </a>
               </div>
             </div>
           </div>
           <div class="card w-96 bg-base-100 shadow-xl">
             <figure class="px-10 pt-10">
-              <img
-                src={second}
-                alt="Shoes"
-                class="rounded-xl"
-              />
+              <img src={second} alt="Shoes" class="rounded-xl" />
             </figure>
             <div class="card-body items-center text-center">
               <h2 class="card-title">Law By Auvee</h2>
               <p>React, React Router, Firebase Authentication, Bootstrap</p>
               <div class="card-actions">
                 {/* <button class="btn btn-primary"> </button> */}
-                <a href="https://auvee-assignment-10.web.app" className="btn btn-neutral" target="_blank" rel="noopener noreferrer">Visit</a>
+                <a
+                  href="https://auvee-assignment-10.web.app"
+                  className="btn btn-neutral"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit
+                </a>
               </div>
             </div>
           </div>
           <div class="card w-96 bg-base-100 shadow-xl">
             <figure class="px-10 pt-10">
-              <img
-                src={third}
-                alt="Shoes"
-                class="rounded-xl"
-              />
+              <img src={third} alt="Shoes" class="rounded-xl" />
             </figure>
             <div class="card-body items-center text-center">
               <h2 class="card-title">Paratronics Warehouse Solution.</h2>
-              <p>React, React Router, Firebase Authentication, MongoDB, NodeJS, Expressjs, Tailwindcss, Bootstrap</p>
+              <p>
+                React, React Router, Firebase Authentication, MongoDB, NodeJS,
+                Expressjs, Tailwindcss, Bootstrap
+              </p>
               <div class="card-actions">
                 {/* <button class="btn btn-primary"> </button> */}
-                <a href="https://paratronics-2213d.web.app" className="btn btn-neutral" target="_blank" rel="noopener noreferrer">Visit</a>
+                <a
+                  href="https://paratronics-2213d.web.app"
+                  className="btn btn-neutral"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit
+                </a>
               </div>
             </div>
           </div>
-          
         </div>
       </Fade>
     </div>
