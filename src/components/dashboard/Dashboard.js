@@ -25,7 +25,7 @@ const Dashboard = () => {
                         <li className='hover-bordered'><Link to='/dashboard'>My Profile</Link></li>
                         {!isAdmin && <>
                             <li className='hover-bordered'><Link to='/dashboard/myorders'>My Orders</Link></li>
-                            <li className='hover-bordered'><Link to='/dashboard/review'>My Reviews</Link></li>
+                            <li className='hover-bordered'><Link to='/dashboard/review'>Add a review</Link></li>
                         </>
                         }
                         {isAdmin && <>
