@@ -54,6 +54,7 @@ const ManageOrders = () => {
                             <th>Product</th>
                             <th>Email</th>
                             <th>Quantity</th>
+                            <th>Price</th>
                             <th>Status</th>
                             <th>Delete</th>
                         </tr>
@@ -66,6 +67,7 @@ const ManageOrders = () => {
                                 <td>{(o.product).slice(0,30)}</td>
                                 <td>{o.email}</td>
                                 <td>{o.myInputQuantity}</td>
+                                <td>{o.total}</td>
                                 <td>
                                 {(o.status === '') && <span className='text-error'>Not Paid</span>}
                                     {(o.status === 'paid') && <button onClick={() => handleShipping(o._id)} className='btn btn-sm btn-success'>Ship</button>}

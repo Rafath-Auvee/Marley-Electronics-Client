@@ -30,6 +30,7 @@ import AddReview from "./components/dashboard/AddReview.js";
 import MyProfile from "./components/dashboard/MyProfile.js";
 import Payment from "./components/dashboard/Payment.js";
 import Purchase from "./components/dashboard/Purchase.js";
+import MyReview from "./components/dashboard/MyReview.js"
 //----------------Admin--------------------------------
 import AddProduct from "./components/dashboard/admin/AddProduct.js";
 import Users from "./components/dashboard/admin/Users.js";
@@ -59,6 +60,7 @@ function App() {
           <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
+          <Route path="myreview" element={<MyReview></MyReview>}></Route>
           <Route
             path="users"
             element={

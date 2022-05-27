@@ -1,89 +1,90 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Flip } from "react-reveal";
-import { toast} from "react-toastify";
+import { Fade } from "react-reveal";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const AddReview = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    const url = `http://localhost:5000/reviews`;
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        toast.success("review added successfully", {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-      });
-  };
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
+        const url = 'http://localhost:5000/reviews';
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+                toast.success('review added successfully', { position: toast.POSITION.TOP_RIGHT })
+            });
+    };
 
-  const [user, loading] = useAuthState(auth);
-  console.log(user);
-  return (
-    <Flip top>
-      <div className="w-96 mx-auto" style={{ minHeight: "100vh" }}>
-        <h2 className="text-4xl text-teal-500">Submit your review: </h2>
-        <form className="flex flex-col " onSubmit={handleSubmit(onSubmit)}>
-          
+    const [user] = useAuthState(auth);
+    return (
+        <Fade left cascade>
+            <div className="w-full max-w-xs mx-auto">
+                <h2 className="text-2xl mb-5 ">Submit your review: </h2>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input
+                            type="text"
+                            value={user.displayName}
+                            className="input input-bordered w-full max-w-xs"
+                            {...register("name")}
+                        />
 
-          <div class="form-control w-full max-w-xs ">
-            <label class="label">
-              <span class="label-text">Name</span>
-            </label>
-            <input
-              {...register("name")}
-              value={user.displayName}
-              placeholder="Rating"
-              type="text"
-              required
-              class="input input-bordered w-full max-w-xs mb-2 rounded h-10 text-black"
-            />
-          </div>
-          <div class="form-control w-full max-w-xs ">
-            <label class="label">
-              <span class="label-text">Rating</span>
-            </label>
-            <input
-              {...register("rating")}
-              min="0"
-              max="5"
-              placeholder="Rating"
-              type="number"
-              required
-              class="input input-bordered w-full max-w-xs mb-2 rounded h-10 text-black"
-            />
-          </div>
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input
+                            type="text"
+                            value={user.email}
+                            className="input input-bordered w-full max-w-xs"
+                            {...register("email")}
+                        />
 
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Your Feedback</span>
-            </label>
-            <textarea
-              class="textarea textarea-bordered w-full max-w-xs h-24 mb-2 rounded text-black"
-              {...register("feedback")}
-              placeholder="Feedback"
-              required
-            ></textarea>
-          </div>
-          <input type="submit" value="Submit" class="btn w-full max-w-xs" />
-        </form>
-        
-      </div>
-    </Flip>
-  );
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Rating</span>
+                        </label>
+                        <input
+                            className="input input-bordered w-full max-w-xs"
+                            placeholder="How many stars you want to give us"
+                            type="number"
+                            {...register("rating")}
+                            min='1'
+                            max='5'
+                        />
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Feedback</span>
+                        </label>
+                        <input
+                            className="input input-bordered w-full max-w-xs"
+                            {...register("feedback")}
+          placeholder="Your feedback"
+                        />
+                    </div>
+                    <input className='btn w-full max-w-xs mt-5' type="submit" value="Add" />
+                </form >
+            </div></Fade>
+    );
 };
 
 export default AddReview;

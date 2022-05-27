@@ -26,6 +26,7 @@ const Navbar = () => {
           <li className="hover-bordered">
             <Link to="/dashboard/review">Add Review</Link>
           </li>
+          <li className='hover-bordered'><Link to='/dashboard/myreview'>My Review</Link></li>
           
         </>
       )}
