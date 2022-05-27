@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init.js";
 import useAdmin from "../hooks/useAdmin";
 const Navbar = () => {
-  const [user] = useAuthState(auth)
+  const [user] = useAuthState(auth);
   const [isAdmin] = useAdmin(user);
 
   const logout = () => {
@@ -15,25 +15,41 @@ const Navbar = () => {
 
   const userMenu = (
     <>
-      <li>
-        <Link to="/dashboard">My Appointments</Link>
+      <li className="hover-bordered">
+        <Link to="/dashboard">My Profile</Link>
       </li>
-      <li>
-        <Link to="/dashboard/review">My Reviews</Link>
-      </li>
-      <li>
-        <Link to="/dashboard/history">My History</Link>
-      </li>
-
-      <li>
-        <Link to="/dashboard/users">All Users</Link>
-      </li>
-      <li>
-        <Link to="/dashboard/addDoctor">Add a Doctor</Link>
-      </li>
-      <li>
-        <Link to="/dashboard/manageDoctor">Manage Doctors</Link>
-      </li>
+      {!isAdmin && (
+        <>
+          <li className="hover-bordered">
+            <Link to="/dashboard/myorders">My Orders</Link>
+          </li>
+          <li className="hover-bordered">
+            <Link to="/dashboard/review">My Reviews</Link>
+          </li>
+          
+        </>
+      )}
+      {isAdmin && (
+        <>
+          <li className="hover-bordered">
+            <Link to="/dashboard/users">All Users</Link>
+          </li>
+          <li className="hover-bordered">
+            <Link to="/dashboard/addProduct">Add a New Product</Link>
+          </li>
+          <li className="hover-bordered">
+            <Link to="/dashboard/manageProduct">Manage Products</Link>
+          </li>
+          <li className="hover-bordered">
+            <Link to="/dashboard/manageOrder">Manage Order</Link>
+          </li>
+          
+        </>
+      )
+      }
+      <button className="btn bg-neutral text-base-100 hover:text-neutral btn-ghost" onClick={logout}>
+            Sign Out
+          </button>
     </>
   );
   const menuItems = (
@@ -72,7 +88,6 @@ const Navbar = () => {
     <div className="navbar bg-base-content text-neutral-content">
       <div className="navbar-start">
         <div className="dropdown">
-          
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"

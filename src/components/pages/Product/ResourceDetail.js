@@ -63,6 +63,7 @@ const ResourceDetail = () => {
     const totalPrice = parseFloat(purchaseQuantity) * parseFloat(data.price)
     const parseTotalQ = parseInt(totalQantity)
     const booking = {
+      myInputQuantity: purchaseQuantity,
       product: data.name,
       quantity: totalQantity,
       email: user?.email,
@@ -86,7 +87,7 @@ const ResourceDetail = () => {
         if (data.modifiedCount) {
 
           refetch();
-          fetch(`http://localhost:5000/order`, {
+          fetch(`http://localhost:5000/booking`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
