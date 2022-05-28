@@ -14,7 +14,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/booking?email=${email}`, {
+        fetch(`https://marley-electronics.herokuapp.com/booking?email=${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

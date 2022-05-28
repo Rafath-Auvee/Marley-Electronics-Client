@@ -13,7 +13,7 @@ const AddReview = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        const url = 'http://localhost:5000/reviews';
+        const url = 'https://marley-electronics.herokuapp.com/reviews';
         fetch(url, {
             method: "POST",
             headers: {

@@ -19,14 +19,14 @@ const ResourceDetail = () => {
   const { id } = useParams();
   const { register, handleSubmit, reset } = useForm();
   const [purchaseQuantity, setPurchaseQuantity] = useState("");
-  const baseUrl = `http://localhost:5000/product/${id}`;
+  const baseUrl = `https://marley-electronics.herokuapp.com/product/${id}`;
   const [total, setTotal] = useState(0);
   const {
     data: data,
     isLoading,
     refetch,
   } = useQuery(["order", id], () =>
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://marley-electronics.herokuapp.com/product/${id}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -74,7 +74,7 @@ const ResourceDetail = () => {
     };
 
     console.log(totalQantity);
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://marley-electronics.herokuapp.com/product/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -87,7 +87,7 @@ const ResourceDetail = () => {
         console.log(data);
         if (data.modifiedCount) {
           refetch();
-          fetch(`http://localhost:5000/booking`, {
+          fetch(`https://marley-electronics.herokuapp.com/booking`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
