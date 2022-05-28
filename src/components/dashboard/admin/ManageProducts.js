@@ -19,7 +19,7 @@ const ManageProducts = () => {
             if (isLoading) {
               return <Loading></Loading>
             }
-            console.log(products)
+            //console.log(products)
     return (
         <div>
             <h1 className="text-2xl text-center">Manage Products</h1>

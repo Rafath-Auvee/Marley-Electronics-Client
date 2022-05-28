@@ -15,7 +15,7 @@ const Resource = () => {
 
   if (error) return "An error has occurred.";
   if (!data) return <Loading/>;
-  if (data)  console.log(data)
+  if (data)  //console.log(data)
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-10 my-10">

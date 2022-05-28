@@ -19,12 +19,12 @@ const MyReview = () => {
         <h1 className="text-2xl text-center mb-5">My Reviews</h1>
         <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-6">
           {reviews.map((review) => (
-            <div class="card w-96 bg-base-100 shadow-2xl shadow-black mb-5 ">
-              <div class="card-body">
-                <h2 class="card-title">{review.name}</h2>
+            <div className="card w-96 bg-base-100 shadow-2xl shadow-black mb-5 ">
+              <div className="card-body">
+                <h2 className="card-title">{review.name}</h2>
                 <p>{review.feedback}</p>
-                <div class="card-actions justify-end">
-                  <button class="btn btn-primary">
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">
                     Rated {review.rating} Stars
                   </button>
                 </div>

@@ -12,8 +12,8 @@ const Contact = () => {
     toast.info("Thank you for your interest");
   };
   return (
-    <div className="grid lg:grid-cols-3  p-5 m-5 shadow-md rounded-lg gap-4">
-      <div className="card w-96 bg-base-100 shadow-2xl shadow-black ">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  p-5 m-5 shadow-md rounded-lg gap-4">
+      <div className="card  bg-base-100 shadow-2xl shadow-black ">
         <figure className="px-10 pt-10">
           <h1>
             <FontAwesomeIcon
@@ -33,7 +33,7 @@ const Contact = () => {
           </Link>
         </div>
       </div>
-      <div className="card w-96 bg-base-100 shadow-2xl shadow-black">
+      <div className="card  bg-base-100 shadow-2xl shadow-black">
         <figure className="px-10 pt-10">
         <h1><FontAwesomeIcon icon={faPhone} style={{ fontSize: "150px" }} /></h1>
         </figure>
@@ -48,7 +48,7 @@ const Contact = () => {
           </Link>
         </div>
       </div>
-      <div className="card w-96 bg-base-100 shadow-2xl shadow-black">
+      <div className="card  bg-base-100 shadow-2xl shadow-black">
         <figure className="px-10 pt-10">
         <FontAwesomeIcon icon={faTruckFast} style={{ fontSize: "150px" }} />
         </figure>

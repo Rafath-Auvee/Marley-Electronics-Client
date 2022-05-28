@@ -35,8 +35,8 @@ const MyProfile = () => {
                 .then(data => {
                     if (data.result.acknowledged) {
                         toast("Updated Successfully")
-                        console.log(data)
-                        console.log(updateUser(data))
+                        //console.log(data)
+                        //console.log(updateUser(data))
 
                         // reset()
                     }

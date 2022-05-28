@@ -40,7 +40,7 @@ const ResourceDetail = () => {
   let minquantity = 50;
   const handleButton = (event) => {
     setPurchaseQuantity(event.target.value);
-    console.log(purchaseQuantity);
+    //console.log(purchaseQuantity);
     if (
       parseInt(purchaseQuantity) >= minquantity &&
       parseInt(purchaseQuantity) <= data.quantity
@@ -58,7 +58,7 @@ const ResourceDetail = () => {
   let totalQantity;
 
   const onSubmit = (e) => {
-    // console.log(e.target.value)
+    // //console.log(e.target.value)
     totalQantity = data.quantity - purchaseQuantity;
     const totalPrice = parseFloat(purchaseQuantity) * parseFloat(data.price);
     const parseTotalQ = parseInt(totalQantity);
@@ -73,7 +73,7 @@ const ResourceDetail = () => {
       total: totalPrice,
     };
 
-    console.log(totalQantity);
+    //console.log(totalQantity);
     fetch(`https://marley-electronics.herokuapp.com/product/${id}`, {
       method: "PUT",
       headers: {
@@ -84,7 +84,7 @@ const ResourceDetail = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         if (data.modifiedCount) {
           refetch();
           fetch(`https://marley-electronics.herokuapp.com/booking`, {

@@ -10,7 +10,7 @@ const Dashboard = () => {
 
     const [user] = useAuthState(auth)
     const [isAdmin] = useAdmin(user);
-    console.log(isAdmin)
+    //console.log(isAdmin)
     return (
         <div className="bg-no-repeat bg-cover bg-center">
             <div className="drawer drawer-mobile">

@@ -2,21 +2,21 @@ import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const { _id, name, url, price } = product;
-  console.log(product);
+  //console.log(product);
   const navigate = useNavigate();
   const { id } = useParams();
 
   const goProduct = async (id) => {
     const baseURL = `/product/${id}`;
-    console.log(baseURL);
-    console.log(product);
+    //console.log(baseURL);
+    //console.log(product);
     await navigate(`/product/${id}`, { state: product });
-    console.log("Product clicked");
+    //console.log("Product clicked");
   };
 
   return (
     <div className="">
-      <div className="card card-compact w-96  shadow-xl bg-neutral text-secondary ">
+      <div className="card card-compact  shadow-xl bg-neutral text-secondary ">
         <figure>
           <img
             className="object-fit h-48 w-96 py-6 px-2"

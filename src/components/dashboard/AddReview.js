@@ -12,7 +12,7 @@ const AddReview = () => {
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
+        //console.log(data);
         const url = 'https://marley-electronics.herokuapp.com/reviews';
         fetch(url, {
             method: "POST",
@@ -23,7 +23,7 @@ const AddReview = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result);
+                //console.log(result);
                 toast.success('review added successfully', { position: toast.POSITION.TOP_RIGHT })
             });
     };
