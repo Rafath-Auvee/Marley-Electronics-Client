@@ -126,7 +126,8 @@ const Navbar = () => {
               <div className="dropdown dropdown-end">
                 <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src={user?.photoURL} />
+                    {/* <img src={user?.photoURL} /> */}
+                    {user?.photoURL ? <img src={user?.photoURL}/> : <img src="https://i.ibb.co/LJ2BGT2/121105442-creative-illustration-of-default-avatar-profile-placeholder-isolated-on-background-art-des.webp"/>}
                   </div>
                 </label>
                 <ul
