@@ -17,13 +17,13 @@ const Home = () => {
       <Flip left>
         <Banner></Banner>
       </Flip>
+        <Summary></Summary>
       <Fade left>
         <Tools></Tools>
         <Link to={'/resource'}><button className="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-md block mx-auto text-2xl">See all tools<FontAwesomeIcon className='ml-5 text-xl' icon={faArrowRight} /> </button></Link>
         <Contact></Contact>
-        <BuyNow></BuyNow>
         <Review></Review>
-        <Summary></Summary>
+        <BuyNow></BuyNow>
       </Fade>
     </div>
   );
