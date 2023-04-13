@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Fade } from "react-reveal";
+
 import auth from "../../firebase.init";
 
 const MyReview = () => {
@@ -14,7 +14,7 @@ const MyReview = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <Fade left cascade>
+
       <div className="w-full">
         <h1 className="text-2xl text-center mb-5">My Reviews</h1>
         <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-6">
@@ -35,7 +35,6 @@ const MyReview = () => {
           ))}
         </div>
       </div>
-    </Fade>
   );
 };
 

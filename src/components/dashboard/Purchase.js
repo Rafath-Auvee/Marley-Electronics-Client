@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import Loading from '../shared/Loading';
-import Fade from 'react-reveal/Fade';
 import { useForm } from 'react-hook-form';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -88,7 +87,7 @@ const Purchase = () => {
     return (
         <div>
             <h1 className="text-3xl text-center">Purchase</h1>
-            <Fade left>
+
                 <div className="bg-no-repeat bg-cover bg-center">
                     <div className="hero min-h-screen mx-auto">
                         <div className="hero-content flex-col lg:flex-row">
@@ -149,7 +148,7 @@ const Purchase = () => {
                         </div>
                     </div>
                 </div>
-            </Fade>
+    
         </div>
     );
 };

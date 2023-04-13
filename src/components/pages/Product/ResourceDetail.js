@@ -60,7 +60,7 @@ const ResourceDetail = () => {
   const onSubmit = (e) => {
     // //console.log(e.target.value)
     totalQantity = data.quantity - purchaseQuantity;
-    const totalPrice = parseFloat(purchaseQuantity) * parseFloat(data.price);
+    const totalPrice = parseInt(purchaseQuantity) * parseInt(data.price);
     const parseTotalQ = parseInt(totalQantity);
     const booking = {
       myInputQuantity: purchaseQuantity,

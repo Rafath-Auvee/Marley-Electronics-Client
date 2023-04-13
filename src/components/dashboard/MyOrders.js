@@ -55,7 +55,7 @@ const MyOrders = () => {
                                 <th>{index + 1}</th>
                                 <td>{(o.product).slice(0,30)}</td>
                                 <td>{o.myInputQuantity}</td>
-                                <td>${o.total}</td>
+                                <td>${(o.total).toFixed(1)}</td>
                                 <td>
                                     {(o.status==='') &&  <Link to={`/dashboard/payment/${o._id}`}> <button className='btn btn-sm btn-success'>Pay</button></Link>}
                                     {(o.status==='paid') && <span className='text-success'>Pending</span>}
