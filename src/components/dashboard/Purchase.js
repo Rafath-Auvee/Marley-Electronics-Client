@@ -14,7 +14,7 @@ const Purchase = () => {
     const [btnDisable, setBtnDisable] = useState(true)
     const [error, setError] = useState("")
     const { register, handleSubmit,reset } = useForm();
-    const url = `https://marley-electronics.herokuapp.com/product/${id}`
+    const url = `https://marley-server.vercel.app/product/${id}`
     const { data: product, isLoading, refetch } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {
@@ -61,7 +61,7 @@ const Purchase = () => {
             .then((data) => {
                 if (data.modifiedCount) {
                     refetch()
-                    fetch(`https://marley-electronics.herokuapp.com/booking`, {
+                    fetch(`https://marley-server.vercel.app/booking`, {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

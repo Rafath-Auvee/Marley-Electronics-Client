@@ -11,7 +11,7 @@ const CheckoutForm = ({ order }) => {
     const [processing, setProcessing] = useState(false);
     const { _id, name, email, total } = order
     useEffect(() => {
-        fetch("https://marley-electronics.herokuapp.com/create-payment-intent", {
+        fetch("https://marley-server.vercel.app/create-payment-intent", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -69,7 +69,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://marley-electronics.herokuapp.com/booking/${_id}`, {
+            fetch(`https://marley-server.vercel.app/booking/${_id}`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json",

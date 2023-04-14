@@ -8,7 +8,7 @@ import Productrow from './ProductRow';
 const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null)
     const { isLoading, data: products, refetch } = useQuery(['products'], () =>
-        fetch(`https://marley-electronics.herokuapp.com/product`, {
+        fetch(`https://marley-server.vercel.app/product`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -9,7 +9,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Resource = () => {
   const { data, error } = useSWR(
-    "https://marley-electronics.herokuapp.com/product",
+    "https://marley-server.vercel.app/product",
     fetcher
   );
 

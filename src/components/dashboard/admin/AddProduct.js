@@ -29,7 +29,7 @@ const AddProduct = () => {
                         quantity: parseInt(data.quantity),
                         url: image
                     }
-                    fetch(`https://marley-electronics.herokuapp.com/product`, {
+                    fetch(`https://marley-server.vercel.app/product`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

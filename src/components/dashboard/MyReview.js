@@ -9,7 +9,7 @@ const MyReview = () => {
 
   const { email } = user;
   useEffect(() => {
-    fetch(`https://marley-electronics.herokuapp.com/reviews?email=${email}`)
+    fetch(`https://marley-server.vercel.app/reviews?email=${email}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

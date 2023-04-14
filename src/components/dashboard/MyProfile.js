@@ -9,7 +9,7 @@ const MyProfile = () => {
     const [updateUser,setUpdateUser] = useState([])
     const { email } = user;
     const { register, handleSubmit, reset } = useForm();
-    fetch(`https://marley-electronics.herokuapp.com/user/${email}`)
+    fetch(`https://marley-server.vercel.app/user/${email}`)
         .then(res => res.json())
         .then(data => {
             setUpdateUser(data)
@@ -24,7 +24,7 @@ const MyProfile = () => {
             linkdein: data.linkdein
         }
         if (email) {
-            fetch(`https://marley-electronics.herokuapp.com/user/${email}`, {
+            fetch(`https://marley-server.vercel.app/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_WHT2vO4EewwarASjGqH6HvBk');
 
 const Payment = () => {
     const { id } = useParams()
-    const url = `https://marley-electronics.herokuapp.com/booking/${id}`
+    const url = `https://marley-server.vercel.app/booking/${id}`
     const { data: order, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',
         headers: {

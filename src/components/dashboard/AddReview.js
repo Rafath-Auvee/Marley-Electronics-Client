@@ -12,7 +12,7 @@ const AddReview = () => {
   } = useForm();
   const onSubmit = (data) => {
     //console.log(data);
-    const url = "https://marley-electronics.herokuapp.com/reviews";
+    const url = "https://marley-server.vercel.app/reviews";
     fetch(url, {
       method: "POST",
       headers: {

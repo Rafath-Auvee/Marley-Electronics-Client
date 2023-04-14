@@ -14,7 +14,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`https://marley-electronics.herokuapp.com/booking?email=${email}`, {
+        fetch(`https://marley-server.vercel.app/booking?email=${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

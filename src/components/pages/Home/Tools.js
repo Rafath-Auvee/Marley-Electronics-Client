@@ -5,7 +5,7 @@ import Tool from './Tool';
 
 const Tools = () => {
     const { isLoading, data: products } = useQuery(['product'], () =>
-        fetch(`https://marley-electronics.herokuapp.com/product`)
+        fetch(`https://marley-server.vercel.app/product`)
             .then(res => res.json())
     )
     if(isLoading){

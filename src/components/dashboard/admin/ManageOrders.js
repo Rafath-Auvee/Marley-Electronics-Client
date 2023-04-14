@@ -13,7 +13,7 @@ const ManageOrders = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`https://marley-electronics.herokuapp.com/booking`, {
+        fetch(`https://marley-server.vercel.app/booking`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const ManageOrders = () => {
             })
     }, [email, orders, navigate])
     const handleShipping = id => {
-        fetch(`https://marley-electronics.herokuapp.com/booking/${id}`, {
+        fetch(`https://marley-server.vercel.app/booking/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

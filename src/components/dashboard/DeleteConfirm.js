@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteConfirm = ({ deletingProduct, refetch, setDeletingProduct }) => {
     const { _id, name } = deletingProduct
     const handleDelete = () => {
-        fetch(`https://marley-electronics.herokuapp.com/product/${_id}`, {
+        fetch(`https://marley-server.vercel.app/product/${_id}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
